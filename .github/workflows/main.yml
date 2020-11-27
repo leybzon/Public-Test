@@ -7,4 +7,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - run: npm install -g solc
+      - run: sudo add-apt-repository ppa:ethereum/ethereum
+      - run: sudo apt-get update
+      - run: sudo apt-get install solc
       - run: solc -o outputDirectory --bin --ast-json --asm *.sol
